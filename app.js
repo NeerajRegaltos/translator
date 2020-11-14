@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const path = require("path");
 const { code } = require("./language");
-const env = require("dotenv");
 const app = express();
 
 
