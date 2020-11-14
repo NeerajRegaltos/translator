@@ -20,17 +20,15 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/", async (req, res) => {
+app.post("/ans", async (req, res) => {
     const { text, lang } = req.body;
     for (var i = 0; i < keyArray.length; i++) {
         if (keyArray[i] === lang) {
             var x = code[lang];
-
         }
     }
-    const result = await translate(text, { to: x })
-    res.render("ans", { sentence: result });
-
+    let result = await translate(text, { to: x })
+    res.render("ans", { result });
 });
 
 app.post("/info", (req, res) => {
