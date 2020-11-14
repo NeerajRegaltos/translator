@@ -25,11 +25,11 @@ app.post("/ans", async (req, res) => {
     for (var i = 0; i < keyArray.length; i++) {
         if (keyArray[i] === lang) {
             var x = code[lang];
-            const result = await translate(text, { to: x })
-            res.render("ans", { sentence: result });
+
         }
     }
-
+    const result = await translate(text, { to: x })
+    res.render("ans", { sentence: result });
 
 });
 
