@@ -1,0 +1,15 @@
+h3{
+    color: rgb(221, 122, 64);
+}
+
+.margin{
+    margin-top: 50px;
+}
+
+html body{
+    background: rgb(235, 195, 143);
+}
+
+.footer a{
+    font-size: 15px;
+}
