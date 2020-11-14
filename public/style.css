@@ -13,3 +13,11 @@ html body{
 .footer a{
     font-size: 15px;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: rgb(212, 172, 112);
+    text-align: center;
+}
