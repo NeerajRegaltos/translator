@@ -30,11 +30,11 @@ app.post("/result", async (req, res) => {
         }
     }
     app.locals.result = await translate(text, { to: x })
-    
+
     res.render("ans");
 });
 
-app.post("/info", (req, res) => {
+app.get("/info", (req, res) => {
     res.render("info")
 });
 
