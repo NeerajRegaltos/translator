@@ -8,7 +8,6 @@ const { code } = require("./language");
 const app = express();
 
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, "views"));
@@ -29,7 +28,8 @@ app.post("/result", async (req, res) => {
             var x = code[lang];
         }
     }
-    app.locals.result = await translate(text, { to: x })
+    app.locals.translation = await translate(text, { to: x })
+
 
     res.render("ans");
 });
