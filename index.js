@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/giveMe", async (req, res) => {
+app.post("/result", async (req, res) => {
     const { text, lang } = req.body;
     for (var i = 0; i < keyArray.length; i++) {
         if (keyArray[i] === lang) {
@@ -28,7 +28,8 @@ app.post("/giveMe", async (req, res) => {
         }
     }
     var result = await translate(text, { to: x })
-    res.render("ans", { "result": result });
+    app.locals.result = result;
+    res.render("ans");
 });
 
 app.post("/info", (req, res) => {
