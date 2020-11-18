@@ -16,19 +16,19 @@ app.use(express.static('public'))
 var keyArray = Object.keys(code);
 
 app.get("/", (req, res) => {
-    res.render("home", { options: keyArray });
+    res.render("home", { "options": keyArray });
 });
 
 
-app.post("/ans", async (req, res) => {
+app.post("/giveMe", async (req, res) => {
     const { text, lang } = req.body;
     for (var i = 0; i < keyArray.length; i++) {
         if (keyArray[i] === lang) {
             var x = code[lang];
         }
     }
-    let result = await translate(text, { to: x })
-    res.render("ans", { result });
+    var result = await translate(text, { to: x })
+    res.render("ans", { "result": result });
 });
 
 app.post("/info", (req, res) => {
@@ -42,3 +42,4 @@ if (port == null || port == "") {
 app.listen(port, function () {
     console.log("server has started on port ");
 })
+
