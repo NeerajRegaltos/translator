@@ -29,8 +29,8 @@ app.post("/result", async (req, res) => {
             var x = code[lang];
         }
     }
-    var result = await translate(text, { to: x })
-    app.locals.result = result;
+    app.locals.result = await translate(text, { to: x })
+    
     res.render("ans");
 });
 
