@@ -1,14 +1,12 @@
 <%- include("partials/header") -%>
 
-<form action="/result">
+<form action="/result" method="POST">
     <h3>Your result is:</h3>
     <hr>
-    <% if(typeof result != "undefined"){ %>
-    <h1><%= result %> </h1>
-    <% } %>
-    <hr>
+    <h1><%= result %>
+        <hr>
 
-    <a href="/"><button type="button" class="btn btn-warning">Back</button></a>
+        <a href="/"><button type="button" class="btn btn-warning">Back</button></a>
 </form>
 
 

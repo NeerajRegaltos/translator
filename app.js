@@ -34,7 +34,7 @@ app.post("/result", async (req, res) => {
     res.render("ans");
 });
 
-app.get("/info", (req, res) => {
+app.post("/info", (req, res) => {
     res.render("info")
 });
 
