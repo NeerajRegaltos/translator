@@ -2,7 +2,7 @@
 
 
 <h3>Any Language to : </h3>
-<form action="/" method="POST">
+<form action="/result" method="POST">
     <select name="lang">
         <% for(var i=0;i<options.length;i++){%>
         <option <%= options[i]?"selected":"" %>>
@@ -12,12 +12,12 @@
     </select>
         <hr>
         
-            <label for="trans">Enter Your Text</label>
-            <br>
-            <textarea id="trans" name="text" cols="30" rows="3" autofocus></textarea>
-            <br>
-           <button type="submit" class="btn btn-success">Boom</button>
+        <label for="trans">Enter Your Text</label>
+        <br>
+        <textarea id="trans" name="text" cols="30" rows="3" autofocus></textarea>
+        <br>
+       <button type="submit" class="btn btn-success">Boom</button>
             
-        </form>
+</form>
         
     <%- include("partials/footer") -%>

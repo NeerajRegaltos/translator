@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/", async (req, res) => {
+app.post("/result", async (req, res) => {
     const { text, lang } = req.body;
     for (var i = 0; i < keyArray.length; i++) {
         if (keyArray[i] === lang) {
