@@ -1,9 +1,10 @@
-const translate = require('translate-google');
 const express = require("express");
 const bodyParser = require("body-parser");
+const translate = require('translate-google');
 const ejs = require("ejs");
 const path = require("path");
 const { code } = require("./language");
+
 const app = express();
 
 
@@ -13,10 +14,11 @@ app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static('public'))
 
-var keyArray = Object.keys(code);
+app.locals.options = Object.keys(code);
+const keyArray = Object.keys(code);
 
 app.get("/", (req, res) => {
-    res.render("home", { "options": keyArray });
+    res.render("home");
 });
 
 
