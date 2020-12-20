@@ -1,17 +1,17 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const translate = require('translate-google');
 const ejs = require("ejs");
 const path = require("path");
-const { code } = require("./language");
+const { code } = require("./public/language");
 
 const app = express();
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
-app.set("views", path.join(__dirname, "views"));
-app.use(express.static('public'))
+// app.set("views", path.join(__dirname, "views"));
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.locals.options = Object.keys(code);
 const keyArray = Object.keys(code);
@@ -38,11 +38,8 @@ app.post("/info", (req, res) => {
     res.render("info")
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-    port = 3000;
-}
-app.listen(port, function () {
-    console.log("server has started on port ");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`server has started on port ${PORT} `);
 })
 

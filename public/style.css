@@ -1,3 +1,9 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 h3{
     color: rgb(221, 122, 64);
 }
