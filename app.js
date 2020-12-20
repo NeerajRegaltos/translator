@@ -6,6 +6,11 @@ const { code } = require("./public/language");
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => {
+    console.log(`server has started on port ${PORT} `);
+})
+
 
 app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
@@ -21,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/result", async (req, res) => {
+app.post("/", async (req, res) => {
     const { text, lang } = req.body;
     for (var i = 0; i < keyArray.length; i++) {
         if (keyArray[i] === lang) {
@@ -38,8 +43,4 @@ app.post("/info", (req, res) => {
     res.render("info")
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`server has started on port ${PORT} `);
-})
 
