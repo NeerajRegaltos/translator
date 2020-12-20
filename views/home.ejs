@@ -1,23 +1,23 @@
-<%- include("partials/header")  -%>
+<%- include("partials/header") -%>
 
 
-<h3>Any Language to : </h3>
-<form action="/result" method="POST">
+    <h3>Any Language to : </h3>
+
     <select name="lang">
         <% for(var i=0;i<options.length;i++){%>
-        <option <%= options[i]?"selected":"" %>>
-            <%= options[i]  %>
-        </option>
-        <%}%>   
+            <option <%=options[i]?"selected":"" %>>
+                <%= options[i] %>
+            </option>
+            <%}%>
     </select>
-        <hr>
-        
+    <hr>
+    <form action="/result" method="POST">
         <label for="trans">Enter Your Text</label>
         <br>
         <textarea id="trans" name="text" cols="30" rows="3" autofocus></textarea>
         <br>
-       <button type="submit" class="btn btn-success">Boom</button>
-            
-</form>
-        
+        <button type="submit" class="btn btn-success">Boom</button>
+
+    </form>
+
     <%- include("partials/footer") -%>
